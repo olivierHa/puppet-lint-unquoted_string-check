@@ -30,7 +30,7 @@ def notify_tokens(type, sep_type, message)
         s = r.prev_token
         while s.type != :NEWLINE and s.type != :LBRACE
           if s.type == :NAME || s.type == :CLASSREF
-            notify :warning, {
+            notify :error, {
               :message => message,
               :line    => s.line,
               :column  => s.column,
